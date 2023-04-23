@@ -61,6 +61,59 @@ local plugins = {
   },
 
   {
+    "nvim-telescope/telescope-file-browser.nvim",
+    -- dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
+  },
+
+  {
+    "nvim-telescope/telescope.nvim",
+    opts = function ()
+
+      local actions = require("telescope.actions")
+      local fb_actions = require("telescope._extensions.file_browser.actions")
+
+      return {
+        -- defaults = {
+        --   mappings = {
+        --     n = {
+        --       ["q"] = actions.quit
+        --     }
+        --   }
+        -- },
+        extensions_list = {"file_browser"},
+        extensions = {
+          file_browser = {
+            theme = "ivy",
+            path = "%:p:h",
+            hide_parent_dir = true,
+            hidden = true,
+            grouped = true,
+            mappings = {
+              ["i"] = {
+                -- your custom insert mode mappings
+                ["<C-a>"] = fb_actions.create,
+              },
+              ["n"] = {
+                --your custom normal mode mappings
+                ["q"] = actions.close,
+                ["h"] = fb_actions.goto_parent_dir,
+                ["l"] = actions.select_default,
+                ["a"] = fb_actions.create,
+                ["m"] = fb_actions.move,
+                ["y"] = fb_actions.copy,
+                ["x"] = fb_actions.remove,
+                ["r"] = fb_actions.rename,
+                ["<backspace>"] = fb_actions.toggle_hidden,
+                ["."] = fb_actions.goto_cwd,
+              },
+            },
+          },
+        },
+      }
+    end
+  },
+
+  {
     "kylechui/nvim-surround",
     version = "*", -- Use for stability; omit to use `main` branch for the latest features
     event = "VeryLazy",
@@ -72,5 +125,7 @@ local plugins = {
   }
 
 }
+
+-- require("telescope").load_extension("")
 
 return plugins
