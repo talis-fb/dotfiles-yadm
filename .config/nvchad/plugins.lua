@@ -62,7 +62,7 @@ local plugins = {
 
   {
     "nvim-telescope/telescope-file-browser.nvim",
-    -- dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
+    dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
   },
 
   {
@@ -73,13 +73,6 @@ local plugins = {
       local fb_actions = require("telescope._extensions.file_browser.actions")
 
       return {
-        -- defaults = {
-        --   mappings = {
-        --     n = {
-        --       ["q"] = actions.quit
-        --     }
-        --   }
-        -- },
         extensions_list = {"file_browser"},
         extensions = {
           file_browser = {
