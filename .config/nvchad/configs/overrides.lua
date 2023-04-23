@@ -16,6 +16,8 @@ M.treesitter = {
     "python",
     "rust",
     "java",
+    "yaml",
+    "dockerfile",
   },
   indent = {
     enable = true,
@@ -41,6 +43,12 @@ M.mason = {
     -- Back end
     "pyright",
     "rust-analyzer",
+
+    -- devops
+    "docker-compose-language-service",
+    "dockerfile-language-server",
+    "ansible-language-server",
+    "ansible-lint",
 
     -- Low level stuff
     "clangd",
