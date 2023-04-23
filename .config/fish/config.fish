@@ -7,6 +7,7 @@ alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
 
+alias v="nvim"
 alias nv="nvim"
 
 alias cat="bat"
