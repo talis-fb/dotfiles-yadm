@@ -47,11 +47,13 @@ local plugins = {
     end,
   },
 
-  -- To make a plugin not be loaded
-  -- {
-  --   "NvChad/nvim-colorizer.lua",
-  --   enabled = false
-  -- },
+  -- MY PERSONAL PLUGINS
+  {
+    "TimUntersberger/neogit",
+    init = function()
+      require("neogit").setup()
+    end,
+  }
 
 }
 

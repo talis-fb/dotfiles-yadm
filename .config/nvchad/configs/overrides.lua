@@ -10,9 +10,12 @@ M.treesitter = {
     "typescript",
     "tsx",
     "c",
+    "cpp",
     "markdown",
     "markdown_inline",
     "python",
+    "rust",
+    "java",
   },
   indent = {
     enable = true,
@@ -28,17 +31,20 @@ M.mason = {
     "lua-language-server",
     "stylua",
 
-    -- web dev stuff
+    -- Front end
     "css-lsp",
     "html-lsp",
     "typescript-language-server",
     "deno",
     "prettier",
 
-    -- c/cpp stuff
+    -- Back end
+    "pyright",
+    "rust-analyzer",
+
+    -- Low level stuff
     "clangd",
     "clang-format",
-    "pyright",
   },
 }
 
