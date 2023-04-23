@@ -1,0 +1,4 @@
+#/bin/sh
+
+# cd "~/.config/nvchad"
+ln -sr ~/.config/nvchad/* ~/.config/nvim/lua/custom/
