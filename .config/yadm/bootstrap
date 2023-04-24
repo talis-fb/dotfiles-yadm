@@ -1,4 +1,20 @@
 #/bin/sh
 
-# cd "~/.config/nvchad"
-ln -sr ~/.config/nvchad/* ~/.config/nvim/lua/custom/
+link=~/.config/nvim/lua/custom
+target=~/.config/nvchad/*
+
+if [ -L "$link" ] && [ "$(readlink "$link")" = "$target" ]; then
+  echo " -- fez nada --"
+  exit 0
+fi
+
+# if [ -e "$link" ] && [ ! -L "$link" ]; then
+  # echo "Error: $link exists and is not a symbolic link" >&2
+  # exit 1
+# fi
+
+echo " -- REMOVIDO E INSERIDO LINK --"
+
+rm -rf ~/.config/nvim/lua/custom/*
+ln -sr ~/.config/nvchad/* "$link"
+
